@@ -1,4 +1,5 @@
-(function(o,l,a,r,k,y){if(o.olark)return;
+function olark_code(){
+;(function(o,l,a,r,k,y){if(o.olark)return;
 r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
 y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
 y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
@@ -7,6 +8,6 @@ y.identify=function(i){y("identify",k.i=i)};
 y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
 k=y._={s:[],t:[+new Date],c:{},l:a};
 })(window,document,"static.olark.com/jsclient/loader.js");
-olark.identify(site_ID);
-console.log("[olark] This site is using the Olark Wordpress Plugin");
-console.log("[olark] site ID = "+site_ID);
+/* Add configuration calls bellow this comment */
+olark.identify('<?php echo $this->olark_options['olark_site_ID']; ?>');
+}

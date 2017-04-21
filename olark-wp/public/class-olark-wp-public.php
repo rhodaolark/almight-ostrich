@@ -97,31 +97,7 @@ class Olark_Wp_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/olark-wp-public.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( $this->plugin_name, 'site_ID', $this->olark_options['olark_site_ID']);
 
-	}
-
-	public function olark_code() {
-		if (!is_admin()) {
-		ob_start(); ?>
-
-		<!-- begin olark code -->
-<script type="text/javascript" async>
-;(function(o,l,a,r,k,y){if(o.olark)return;
-r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
-y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
-y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)};
-y.extend=function(i,j){y("extend",i,j)};
-y.identify=function(i){y("identify",k.i=i)};
-y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
-k=y._={s:[],t:[+new Date],c:{},l:a};
-})(window,document,"static.olark.com/jsclient/loader.js");
-/* Add configuration calls bellow this comment */
-olark.identify('<?php echo $this->olark_options['olark_site_ID']; ?>');</script>
-<!-- end olark code -->
-
-		<?php
-		echo ob_get_clean();
-
-	}
 	}
 }

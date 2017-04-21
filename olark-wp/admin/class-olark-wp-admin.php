@@ -123,7 +123,19 @@ class Olark_Wp_Admin {
 	public function display_plugin_setup_page() {
 		include_once( 'partials/olark-wp-admin-display.php' );
 	}
-	public function options_update() {
-    register_setting($this->plugin_name, $this->plugin_name, array($this, 'validate'));
+	public function validate($input) {
+    // All checkboxes inputs        
+    $valid = array();
+
+    //Enable Olark
+    $valid['enable_olark'] = (isset($input['enable_olark']) && !empty($input['enable_olark'])) ? 1 : 0;
+    $valid['olark_site_ID'] = esc_textarea($input['olark_site_ID']);
+    
+    return $valid;
  }
+	
+	public function options_update() {
+    register_setting($this->plugin_name, $this->plugin_name	, array($this, 'validate'));
+ }
+	
 }

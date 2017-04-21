@@ -175,7 +175,6 @@ class Olark_Wp {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts', $in_footer = true);
-		$this->loader->add_action( 'init', $plugin_public, 'olark_code' );
 	}
 
 	/**
