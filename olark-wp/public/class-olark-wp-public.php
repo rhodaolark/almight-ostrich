@@ -96,8 +96,10 @@ class Olark_Wp_Public {
 		 * class.
 		 */
 
+		if(!empty($this->olark_options['enable_olark'])){
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/olark-wp-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name, 'site_ID', $this->olark_options['olark_site_ID']);
-
+		}
+		
 	}
 }
