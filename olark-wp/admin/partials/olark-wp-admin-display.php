@@ -28,6 +28,9 @@
         // Olark Site ID
         $olark_site_ID = $options['olark_site_ID'];
 		$enable_olark = $options['enable_olark'];
+		$start_expanded = $options['start_expanded'];
+		$detached_chat = $options['detached_chat'];
+		$olark_lang = $options['olark_lang'];
         
     ?>
 
@@ -36,23 +39,49 @@
         do_settings_sections($this->plugin_name);
     ?>
 	
-	    <table class="form-table">
-      <tr valign="top">
-	  <th scope="row">Show Olark on my site</th>
-	  <tr>
-	  <label for="<?php echo $this->plugin_name; ?>-enable_olark">
-	  <td><input type="checkbox" id="<?php echo $this->plugin_name; ?>-enable_olark" name="<?php echo $this->plugin_name; ?>[enable_olark]" value="1" <?php checked($enable_olark, 1); ?>/><span><?php esc_attr_e('Enable Olark', $this->plugin_name); ?></span></td>
-	  </label>
-	<tr>
-      <th scope="row">My Olark Site ID</th>
-	  <tr>
+	  <div class="form-table">
+	  <h2>My Olark Site ID</h2>
+	  <fieldset>
 	  <label for="<?php echo $this->plugin_name; ?>-olark_site_ID">
-      <td><input type="text" id="<?php echo $this->plugin_name; ?>-olark_site_ID" name="<?php echo $this->plugin_name; ?>[olark_site_ID]" value="<?php if(!empty($olark_site_ID)) echo $olark_site_ID; ?>"/><span><?php esc_attr_e('Olark Site ID', $this->plugin_name); ?></span></td>
-	  </label>
-      </tr>
-    </table>
+      <p><input type="text" id="<?php echo $this->plugin_name; ?>-olark_site_ID" name="<?php echo $this->plugin_name; ?>[olark_site_ID]" value="<?php if(!empty($olark_site_ID)) echo $olark_site_ID; ?>"/><span><?php esc_attr_e('Olark Site ID', $this->plugin_name); ?></span></p>
+	  </label></fieldset>
+    
 	<p>If you don't know your site ID, you can get it from the Olark website on the <a href="http://olark.com/install">install page</a></p>
-    <?php submit_button(); ?>
+    	
+      <h2>Show Olark on my site</h2>
+	  <fieldset>
+	  <label for="<?php echo $this->plugin_name; ?>-enable_olark">
+	  <p><input type="checkbox" id="<?php echo $this->plugin_name; ?>-enable_olark" name="<?php echo $this->plugin_name; ?>[enable_olark]" value="1" <?php checked($enable_olark, 1); ?>/><span><?php esc_attr_e('Enable Olark', $this->plugin_name); ?></span></p>
+	  </label></fieldset>
+	  
+	  <h2>Translate the chatbox</h2>
+	  <fieldset>
+	  <label for="<?php echo $this->plugin_name; ?>-olark_lang">
+	  <select id="<?php echo $this->plugin_name; ?>-olark_lang" name="<?php echo $this->plugin_name; ?>[olark_lang]" value="en-US" <?php selected($olark_lang);?>/>
+		<option value="en-US" <?php selected( $olark_lang, 'en-US' ); ?>>English</option>
+		<option value="fr-FR" <?php selected( $olark_lang, 'fr-FR' ); ?>>French</option>
+		<option value="es-ES" <?php selected( $olark_lang, 'es-ES' ); ?>>Spanish</option>
+		</select>
+		</label>
+	  </fieldset>
+	  
+	<p>To customise the text fully, go to <a href="http://olark.com/customize/behavior">behaviour settings on the Olark website</a></p>
+	  
+	  <h2>Start with the chatbox expanded</h2>
+	  <fieldset>
+	  <label for="<?php echo $this->plugin_name; ?>-start_expanded">
+	  <p><input type="checkbox" id="<?php echo $this->plugin_name; ?>-start_expanded" name="<?php echo $this->plugin_name; ?>[start_expanded]" value="1" <?php checked($start_expanded, 1); ?>/><span><?php esc_attr_e('Start with the chatbox expanded', $this->plugin_name); ?></span></p>
+	  </label></fieldset>
+	
+	  <h2>Detach the chatbox</h2>
+	  <fieldset>
+	  <label for="<?php echo $this->plugin_name; ?>-detached_chat">
+	  <p><input type="checkbox" id="<?php echo $this->plugin_name; ?>-detached_chat" name="<?php echo $this->plugin_name; ?>[detached_chat]" value="1" <?php checked($detached_chat, 1); ?>/><span><?php esc_attr_e('Detach the chatbox', $this->plugin_name); ?></span></p>
+	  </label></fieldset>
+	
+	<?php submit_button(); ?>
+	</div>
+	
   </form>
 	
 </div><!--wrap-->

@@ -1,3 +1,5 @@
+console.log("[olark] This site is using the Olark Wordpress Plugin");
+console.log("[olark] site ID = "+olark_vars.site_ID);
 (function(o,l,a,r,k,y){if(o.olark)return;
 r="script";y=l.createElement(r);r=l.getElementsByTagName(r)[0];
 y.async=1;y.src="//"+a;r.parentNode.insertBefore(y,r);
@@ -7,6 +9,18 @@ y.identify=function(i){y("identify",k.i=i)};
 y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
 k=y._={s:[],t:[+new Date],c:{},l:a};
 })(window,document,"static.olark.com/jsclient/loader.js");
-olark.identify(site_ID);
-console.log("[olark] This site is using the Olark Wordpress Plugin");
-console.log("[olark] site ID = "+site_ID);
+if (olark_vars.expand != 0){
+	olark.configure('box.start_expanded', true);
+	console.log("[olark] Wordpress start_expanded option is enabled");
+}else {
+    olark.configure('box.start_expanded', false);
+}
+if (olark_vars.float != 0){
+	olark.configure('system.hb_detached', true);
+	console.log("[olark] Wordpress detached option is enabled");
+}else {
+    olark.configure('system.hb_detached', false);
+}
+olark.configure("system.localization", olark_vars.lang);
+console.log("[olark] Language chosen in Wordpress is " +olark_vars.lang)
+olark.identify(olark_vars.site_ID);

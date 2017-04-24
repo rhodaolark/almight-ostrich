@@ -98,8 +98,14 @@ class Olark_Wp_Public {
 
 		if(!empty($this->olark_options['enable_olark'])){
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/olark-wp-public.js', array( 'jquery' ), $this->version, false );
-		wp_localize_script( $this->plugin_name, 'site_ID', $this->olark_options['olark_site_ID']);
-		}
 		
+		$dataToBePassed = array(
+		'site_ID'           => $this->olark_options['olark_site_ID'],
+		'expand' 			=> $this->olark_options['start_expanded'],
+		'float' 			=> $this->olark_options['detached_chat'],
+		'lang'				=> $this->olark_options['olark_lang']
+);
+		wp_localize_script( $this->plugin_name, 'olark_vars', $dataToBePassed );
+				}
 	}
 }

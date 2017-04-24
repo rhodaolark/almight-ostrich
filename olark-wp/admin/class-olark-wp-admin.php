@@ -127,10 +127,11 @@ class Olark_Wp_Admin {
     // All checkboxes inputs        
     $valid = array();
 
-    //Enable Olark
-    $valid['enable_olark'] = (isset($input['enable_olark']) && !empty($input['enable_olark'])) ? 1 : 0;
     $valid['olark_site_ID'] = esc_textarea($input['olark_site_ID']);
-    
+	$valid['enable_olark'] = (isset($input['enable_olark']) && !empty($input['enable_olark'])) ? 1 : 0;
+    $valid['start_expanded'] = (isset($input['start_expanded']) && !empty($input['start_expanded'])) ? 1 : 0;
+    $valid['detached_chat'] = (isset($input['detached_chat']) && !empty($input['detached_chat'])) ? 1 : 0;
+	$valid['olark_lang'] = esc_textarea($input['olark_lang']);
     return $valid;
  }
 	
