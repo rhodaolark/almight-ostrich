@@ -14,13 +14,18 @@ if (olark_vars.expand != 0){
 	console.log("[olark] Wordpress start_expanded option is enabled");
 }else {
     olark.configure('box.start_expanded', false);
-}
+	console.log("[olark] The wordpress plugin has start_expanded set to false");
+};
 if (olark_vars.float != 0){
 	olark.configure('system.hb_detached', true);
 	console.log("[olark] Wordpress detached option is enabled");
 }else {
     olark.configure('system.hb_detached', false);
-}
+	console.log("[olark] The wordpress plugin has detached set to false");
+};
 olark.configure("system.localization", olark_vars.lang);
-console.log("[olark] Language chosen in Wordpress is " +olark_vars.lang)
+console.log("[olark] Language chosen in Wordpress is " +olark_vars.lang);
+/* Add configuration calls bellow this comment */
+eval(olark_vars.api);
+console.log("[olark] additional api calls in Wordpress are as follows " +olark_vars.api);
 olark.identify(olark_vars.site_ID);

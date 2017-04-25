@@ -132,6 +132,7 @@ class Olark_Wp_Admin {
     $valid['start_expanded'] = (isset($input['start_expanded']) && !empty($input['start_expanded'])) ? 1 : 0;
     $valid['detached_chat'] = (isset($input['detached_chat']) && !empty($input['detached_chat'])) ? 1 : 0;
 	$valid['olark_lang'] = esc_textarea($input['olark_lang']);
+	$valid['olark_api'] = esc_textarea($input['olark_api']);
     return $valid;
  }
 	

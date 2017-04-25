@@ -103,7 +103,8 @@ class Olark_Wp_Public {
 		'site_ID'           => $this->olark_options['olark_site_ID'],
 		'expand' 			=> $this->olark_options['start_expanded'],
 		'float' 			=> $this->olark_options['detached_chat'],
-		'lang'				=> $this->olark_options['olark_lang']
+		'lang'				=> $this->olark_options['olark_lang'],
+		'api'				=> $this->olark_options['olark_api']
 );
 		wp_localize_script( $this->plugin_name, 'olark_vars', $dataToBePassed );
 				}

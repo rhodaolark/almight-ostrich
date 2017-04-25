@@ -31,6 +31,7 @@
 		$start_expanded = $options['start_expanded'];
 		$detached_chat = $options['detached_chat'];
 		$olark_lang = $options['olark_lang'];
+		$olark_api = $options['olark_api'];
         
     ?>
 
@@ -77,6 +78,13 @@
 	  <fieldset>
 	  <label for="<?php echo $this->plugin_name; ?>-detached_chat">
 	  <p><input type="checkbox" id="<?php echo $this->plugin_name; ?>-detached_chat" name="<?php echo $this->plugin_name; ?>[detached_chat]" value="1" <?php checked($detached_chat, 1); ?>/><span><?php esc_attr_e('Detach the chatbox', $this->plugin_name); ?></span></p>
+	  </label></fieldset>
+	  
+	  <h2>Advanced settings</h2>
+	  <p>If you wish to add Olark api calls, you may do so here. Do not include script tags. This is recommended for advanced users only.
+	  <fieldset>
+	  <label for="<?php echo $this->plugin_name; ?>-olark_api">
+       <p><input type="text" id="<?php echo $this->plugin_name; ?>-olark_api" name="<?php echo $this->plugin_name; ?>[olark_api]" value="<?php if(!empty($olark_api)) echo $olark_api; ?>"/><span><?php esc_attr_e('Advanced Api Settings', $this->plugin_name); ?></span></p>
 	  </label></fieldset>
 	
 	<?php submit_button(); ?>
