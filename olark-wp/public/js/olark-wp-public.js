@@ -10,6 +10,7 @@ y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
 k=y._={s:[],t:[+new Date],c:{},l:a};
 })(window,document,"static.olark.com/jsclient/loader.js");
 /* Add configuration calls below this comment */
+/* Start chatbox expanded settings*/
 if (olark_vars.expand != 0){
 	olark.configure('box.start_expanded', true);
 	console.log("[olark] Wordpress start_expanded option is enabled");
@@ -17,6 +18,7 @@ if (olark_vars.expand != 0){
     olark.configure('box.start_expanded', false);
 	console.log("[olark] The wordpress plugin has start_expanded set to false");
 };
+/* Detached chatbox settings*/
 if (olark_vars.float != 0){
 	olark.configure('system.hb_detached', true);
 	console.log("[olark] Wordpress detached option is enabled");
@@ -24,8 +26,10 @@ if (olark_vars.float != 0){
     olark.configure('system.hb_detached', false);
 	console.log("[olark] The wordpress plugin has detached set to false");
 };
+/* Language settings*/
 olark.configure("system.localization", olark_vars.lang);
 console.log("[olark] Language chosen in Wordpress is " +olark_vars.lang);
+/* Advanced settings*/
 eval(olark_vars.api);
 if (olark_vars.api.length < 2) {
 	console.log("[olark] There are no additional api calls used in the Wordpress plugin");
