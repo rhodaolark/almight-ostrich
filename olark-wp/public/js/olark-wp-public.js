@@ -42,6 +42,6 @@ eval(olark_vars.api);
 if (olark_vars.api.length < 2) {
 	console.log("[olark] There are no additional api calls used in the Wordpress plugin");
 }else {
-	console.log("[olark] additional api calls in Wordpress are as follows " +olark_vars.api);
+	console.log("[olark] additional api calls in Wordpress are as follows: " +olark_vars.api);
 };
 olark.identify(olark_vars.site_ID);
