@@ -17,7 +17,7 @@
 <div class="wrap">
 
     <h2><?php echo esc_html(get_admin_page_title()); ?></h2>
-	<br><br>
+	</br>
 
 	<form method="post" name="olark_options" action="options.php">
 
@@ -79,7 +79,7 @@
 	<p><?php esc_attr_e('If you wish to add Olark api calls, you may do so here. Do not include script tags. This is recommended for advanced users only.', $this->plugin_name); ?></p>
 	<fieldset>
 	<label for="<?php echo $this->plugin_name; ?>-olark_api">
-    <p><textarea cols="80" rows="10" id="<?php echo $this->plugin_name; ?>-olark_api" name="<?php echo $this->plugin_name; ?>[olark_api]" placeholder="<?php esc_attr_e('Enter your api calls here. Do not use script tags.', $this->plugin_name); ?>"/><?php if(!empty($olark_api)) echo $olark_api; ?></textarea></p>
+    <p><textarea cols="80" rows="8" id="<?php echo $this->plugin_name; ?>-olark_api" name="<?php echo $this->plugin_name; ?>[olark_api]" placeholder="<?php esc_attr_e('Enter your api calls here. Do not use script tags.', $this->plugin_name); ?>"/><?php if(!empty($olark_api)) echo $olark_api; ?></textarea></p>
 	</label></fieldset>
 	
 	<?php submit_button(); ?>
