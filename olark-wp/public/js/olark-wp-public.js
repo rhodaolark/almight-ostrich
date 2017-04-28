@@ -10,6 +10,14 @@ y.configure=function(i,j){y("configure",i,j);k.c[i]=j};
 k=y._={s:[],t:[+new Date],c:{},l:a};
 })(window,document,"static.olark.com/jsclient/loader.js");
 /* Add configuration calls below this comment */
+/* Enable Olark on mobile settings*/
+if (olark_vars.mobile != 0){
+	olark.configure('system.hb_disable_mobile', true);
+	console.log("[olark] The wordpress plugin has mobile set to true");
+}else {
+    olark.configure('system.hb_disable_mobile', false);
+	console.log("[olark] The wordpress plugin has mobile set to false");
+};
 /* Start chatbox expanded settings*/
 if (olark_vars.expand != 0){
 	olark.configure('box.start_expanded', true);

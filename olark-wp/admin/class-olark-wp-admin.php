@@ -133,6 +133,7 @@ class Olark_Wp_Admin {
     $valid['detached_chat'] = (isset($input['detached_chat']) && !empty($input['detached_chat'])) ? 1 : 0;
 	$valid['olark_lang'] = esc_textarea($input['olark_lang']);
 	$valid['olark_api'] = esc_textarea($input['olark_api']);
+	$valid['olark_mobile'] = (isset($input['olark_mobile']) && !empty($input['olark_mobile'])) ? 1 : 0;
     return $valid;
  }
 	

@@ -104,7 +104,8 @@ class Olark_Wp_Public {
 		'expand' 			=> $this->olark_options['start_expanded'],
 		'float' 			=> $this->olark_options['detached_chat'],
 		'lang'				=> $this->olark_options['olark_lang'],
-		'api'				=> $this->olark_options['olark_api']
+		'api'				=> $this->olark_options['olark_api'],
+		'mobile'			=> $this->olark_options['olark_mobile']
 );
 		wp_localize_script( $this->plugin_name, 'olark_vars', $dataToBePassed );
 				}
